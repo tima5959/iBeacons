@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		225D4F1E2579674700183A5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F1D2579674700183A5F /* AppDelegate.swift */; };
 		225D4F202579674700183A5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F1F2579674700183A5F /* SceneDelegate.swift */; };
-		225D4F222579674700183A5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F212579674700183A5F /* ViewController.swift */; };
 		225D4F252579674700183A5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225D4F232579674700183A5F /* Main.storyboard */; };
 		225D4F272579674800183A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225D4F262579674800183A5F /* Assets.xcassets */; };
 		225D4F2A2579674800183A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225D4F282579674800183A5F /* LaunchScreen.storyboard */; };
+		225D4F34257967BE00183A5F /* BluetoothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F33257967BE00183A5F /* BluetoothVC.swift */; };
+		225D4F37257967CC00183A5F /* BeaconsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F36257967CC00183A5F /* BeaconsVC.swift */; };
+		225D4F4725796C8000183A5F /* BluetoothTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F4625796C8000183A5F /* BluetoothTableViewCell.swift */; };
+		225D4F4B25796C9000183A5F /* BeaconsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F4A25796C9000183A5F /* BeaconsTableViewCell.swift */; };
+		227AEE61257976B400C29579 /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227AEE60257976B400C29579 /* UIViewController + Ext.swift */; };
+		227AEE65257AAC4C00C29579 /* BluetoothModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227AEE64257AAC4C00C29579 /* BluetoothModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		225D4F1A2579674700183A5F /* iBeacons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeacons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225D4F1D2579674700183A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225D4F1F2579674700183A5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		225D4F212579674700183A5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		225D4F242579674700183A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		225D4F262579674800183A5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		225D4F292579674800183A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		225D4F2B2579674800183A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		225D4F33257967BE00183A5F /* BluetoothVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothVC.swift; sourceTree = "<group>"; };
+		225D4F36257967CC00183A5F /* BeaconsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsVC.swift; sourceTree = "<group>"; };
+		225D4F4625796C8000183A5F /* BluetoothTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTableViewCell.swift; sourceTree = "<group>"; };
+		225D4F4A25796C9000183A5F /* BeaconsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsTableViewCell.swift; sourceTree = "<group>"; };
+		227AEE60257976B400C29579 /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
+		227AEE64257AAC4C00C29579 /* BluetoothModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,116 @@
 		225D4F1C2579674700183A5F /* iBeacons */ = {
 			isa = PBXGroup;
 			children = (
-				225D4F1D2579674700183A5F /* AppDelegate.swift */,
-				225D4F1F2579674700183A5F /* SceneDelegate.swift */,
-				225D4F212579674700183A5F /* ViewController.swift */,
-				225D4F232579674700183A5F /* Main.storyboard */,
-				225D4F262579674800183A5F /* Assets.xcassets */,
-				225D4F282579674800183A5F /* LaunchScreen.storyboard */,
-				225D4F2B2579674800183A5F /* Info.plist */,
+				225D4F3B2579695400183A5F /* Application */,
+				227AEE5E2579768200C29579 /* Core */,
+				225D4F3D2579697600183A5F /* Flows */,
+				225D4F3E2579699700183A5F /* Resources */,
+				225D4F40257969DC00183A5F /* Configuration */,
 			);
 			path = iBeacons;
+			sourceTree = "<group>";
+		};
+		225D4F3A2579693B00183A5F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F4325796C4500183A5F /* Bluetooth */,
+				225D4F4425796C4F00183A5F /* Beacons */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		225D4F3B2579695400183A5F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F3C2579696800183A5F /* AppDelegate */,
+				225D4F3A2579693B00183A5F /* Controllers */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		225D4F3C2579696800183A5F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F1D2579674700183A5F /* AppDelegate.swift */,
+				225D4F1F2579674700183A5F /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		225D4F3D2579697600183A5F /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F232579674700183A5F /* Main.storyboard */,
+				225D4F282579674800183A5F /* LaunchScreen.storyboard */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		225D4F3E2579699700183A5F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F262579674800183A5F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		225D4F40257969DC00183A5F /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F2B2579674800183A5F /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		225D4F4325796C4500183A5F /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				2279ABD5257AACE300DBC9B6 /* Model */,
+				2279ABD4257AACD900DBC9B6 /* Controller */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		225D4F4425796C4F00183A5F /* Beacons */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F36257967CC00183A5F /* BeaconsVC.swift */,
+				225D4F4A25796C9000183A5F /* BeaconsTableViewCell.swift */,
+			);
+			path = Beacons;
+			sourceTree = "<group>";
+		};
+		2279ABD4257AACD900DBC9B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				225D4F33257967BE00183A5F /* BluetoothVC.swift */,
+				225D4F4625796C8000183A5F /* BluetoothTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2279ABD5257AACE300DBC9B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				227AEE64257AAC4C00C29579 /* BluetoothModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		227AEE5E2579768200C29579 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				227AEE5F2579768E00C29579 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		227AEE5F2579768E00C29579 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				227AEE60257976B400C29579 /* UIViewController + Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225D4F222579674700183A5F /* ViewController.swift in Sources */,
 				225D4F1E2579674700183A5F /* AppDelegate.swift in Sources */,
+				225D4F4725796C8000183A5F /* BluetoothTableViewCell.swift in Sources */,
+				227AEE61257976B400C29579 /* UIViewController + Ext.swift in Sources */,
+				225D4F34257967BE00183A5F /* BluetoothVC.swift in Sources */,
+				225D4F37257967CC00183A5F /* BeaconsVC.swift in Sources */,
 				225D4F202579674700183A5F /* SceneDelegate.swift in Sources */,
+				225D4F4B25796C9000183A5F /* BeaconsTableViewCell.swift in Sources */,
+				227AEE65257AAC4C00C29579 /* BluetoothModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +404,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z87S9B5RFW;
-				INFOPLIST_FILE = iBeacons/Info.plist;
+				INFOPLIST_FILE = /Users/tim/Desktop/iBeacons/iBeacons/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z87S9B5RFW;
-				INFOPLIST_FILE = iBeacons/Info.plist;
+				INFOPLIST_FILE = /Users/tim/Desktop/iBeacons/iBeacons/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

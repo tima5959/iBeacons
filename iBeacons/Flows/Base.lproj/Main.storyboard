@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F5R-R7-sks">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bluetooth-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Bluetooth" id="BYZ-38-t0r" customClass="BluetoothVC" customModule="iBeacons" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-8N-OlV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BluetoothTableViewCell" rowHeight="106" id="PgG-2W-fh6" customClass="BluetoothTableViewCell" customModule="iBeacons" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PgG-2W-fh6" id="S1O-jd-dDW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBU-qk-Tl5">
+                                                    <rect key="frame" x="24" y="19" width="219" height="68"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiH-il-xVc">
+                                                    <rect key="frame" x="259" y="19" width="92" height="68"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="0AO-Ij-BzE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JiH-il-xVc" secondAttribute="bottom" constant="8" id="5yx-8C-NU9"/>
+                                                <constraint firstItem="pBU-qk-Tl5" firstAttribute="top" secondItem="S1O-jd-dDW" secondAttribute="topMargin" constant="8" id="PoF-f9-3NP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JiH-il-xVc" secondAttribute="trailing" constant="8" id="TF9-5h-Nsi"/>
+                                                <constraint firstItem="JiH-il-xVc" firstAttribute="leading" secondItem="pBU-qk-Tl5" secondAttribute="trailing" constant="16" id="Uic-bP-Yr3"/>
+                                                <constraint firstItem="JiH-il-xVc" firstAttribute="top" secondItem="S1O-jd-dDW" secondAttribute="topMargin" constant="8" id="cTs-l5-Y4Z"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pBU-qk-Tl5" secondAttribute="bottom" constant="8" id="lbg-kb-2gR"/>
+                                                <constraint firstItem="pBU-qk-Tl5" firstAttribute="leading" secondItem="S1O-jd-dDW" secondAttribute="leadingMargin" constant="8" id="ygn-cZ-C0x"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="pBU-qk-Tl5" id="4hY-fc-tWa"/>
+                                            <outlet property="rssiLabel" destination="JiH-il-xVc" id="6TC-HS-HPH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fyc-8N-OlV" secondAttribute="bottom" id="FOe-i7-byH"/>
+                            <constraint firstItem="Fyc-8N-OlV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pZL-ID-TLq"/>
+                            <constraint firstItem="Fyc-8N-OlV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qaM-Rh-Ran"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fyc-8N-OlV" secondAttribute="trailing" id="uBh-pb-zpI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bluetooth" id="0dV-z6-QBM"/>
+                    <connections>
+                        <outlet property="tableView" destination="Fyc-8N-OlV" id="gIo-Pm-bMN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="-465.51724137931041"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tgi-Cm-C9a">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="F5R-R7-sks" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dEo-6K-KZl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="HEq-BX-bhq"/>
+                        <segue destination="5Ky-PQ-WM5" kind="relationship" relationship="viewControllers" id="n0H-FB-kyQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ECR-AI-lrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="-23.4375"/>
+        </scene>
+        <!--Beacons-->
+        <scene sceneID="zk5-0y-tNY">
+            <objects>
+                <viewController id="5Ky-PQ-WM5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ko4-HK-XqU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BuR-Gh-04B">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconsTableViewCell" rowHeight="80" id="EEm-f3-M7m" customClass="BeaconsTableViewCell" customModule="iBeacons" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EEm-f3-M7m" id="NRf-tM-70X">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eyk-nF-jLC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BuR-Gh-04B" firstAttribute="leading" secondItem="eyk-nF-jLC" secondAttribute="leading" id="AaW-Qu-kwa"/>
+                            <constraint firstItem="eyk-nF-jLC" firstAttribute="trailing" secondItem="BuR-Gh-04B" secondAttribute="trailing" id="FHe-Z5-hBB"/>
+                            <constraint firstItem="BuR-Gh-04B" firstAttribute="top" secondItem="eyk-nF-jLC" secondAttribute="top" id="KuU-Lw-Dzo"/>
+                            <constraint firstItem="eyk-nF-jLC" firstAttribute="bottom" secondItem="BuR-Gh-04B" secondAttribute="bottom" id="eI5-za-uVs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Beacons" id="pws-0R-5Gs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAZ-bo-9aQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747.82608695652175" y="235.71428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
