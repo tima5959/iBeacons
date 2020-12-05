@@ -15,7 +15,7 @@ class BluetoothVC: UIViewController {
     var manager: CBCentralManager?
     var bluetоothPeripherals = [BluetoothModel]()
     
-    var blePeripherals = [String: String]()
+    var blePeripherals = [String: BluetoothModel]()
     var blePeripheralsNamed: [String] {
         get {
             Array(blePeripherals.keys)
@@ -69,14 +69,13 @@ extension BluetoothVC: CBCentralManagerDelegate {
                         rssi RSSI: NSNumber) {
         
         guard let name = peripheral.name else { return }
-//        let uuid = peripheral.services?.first?.uuid.uuidString
+        let uuid = peripheral.identifier.uuidString
         
+        self.blePeripherals[uuid] = BluetoothModel(name: name,
+                                                   rssi: RSSI.stringValue,
+                                                   uuid: uuid)
+        self.tableView.reloadData()
         
-        
-        DispatchQueue.main.async {
-            self.blePeripherals[name] = RSSI.stringValue
-            self.tableView.reloadData()
-        }
         
     }
 }
@@ -90,11 +89,12 @@ extension BluetoothVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifire) as? BluetoothTableViewCell else { return UITableViewCell() }
         
-        let bleDeviceName = blePeripheralsNamed[indexPath.row]
-        let bleDeviceRSSI = blePeripherals[bleDeviceName]
+        let bleDeviceUUID = blePeripheralsNamed[indexPath.row] // получили значения по индексу
+        let bleDevice = blePeripherals[bleDeviceUUID] // получили значения по названию бле устройства
         
-        cell.nameLabel.text = bleDeviceName
-        cell.rssiLabel.text = bleDeviceRSSI
+        cell.uuidLabel.text = bleDeviceUUID
+        cell.rssiLabel.text = bleDevice?.rssi
+        cell.nameLabel.text = bleDevice?.name
         
         return cell
     }

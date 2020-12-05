@@ -10,4 +10,5 @@ import Foundation
 struct BluetoothModel {
     var name: String
     var rssi: String
+    var uuid: String
 }

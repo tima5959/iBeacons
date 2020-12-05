@@ -12,5 +12,7 @@ class BluetoothTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rssiLabel: UILabel!
+    @IBOutlet weak var uuidLabel: UILabel!
+    
     
 }
