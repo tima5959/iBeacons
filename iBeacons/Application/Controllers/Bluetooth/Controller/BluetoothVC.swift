@@ -70,9 +70,10 @@ extension BluetoothVC: CBCentralManagerDelegate {
         
         guard let name = peripheral.name else { return }
         let uuid = peripheral.identifier.uuidString
+        let rssi = RSSI.stringValue
         
         self.blePeripherals[uuid] = BluetoothModel(name: name,
-                                                   rssi: RSSI.stringValue,
+                                                   rssi: rssi,
                                                    uuid: uuid)
         self.tableView.reloadData()
         
