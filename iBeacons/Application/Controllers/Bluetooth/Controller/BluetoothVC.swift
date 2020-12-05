@@ -12,11 +12,9 @@ class BluetoothVC: UIViewController {
     
     private let reuseIdentifire = "BluetoothTableViewCell"
     
-    var manager: CBCentralManager?
-    var bluetоothPeripherals = [BluetoothModel]()
-    
-    var blePeripherals = [String: BluetoothModel]()
-    var blePeripheralsNamed: [String] {
+    private var manager: CBCentralManager?
+    private var blePeripherals = [String: BluetoothModel]()
+    private var blePeripheralsNamed: [String] {
         get {
             Array(blePeripherals.keys)
         }
@@ -35,13 +33,10 @@ class BluetoothVC: UIViewController {
                                    options: nil)
         
         // Когда наш менеджер работает должным образом, мы можем смотреть, что же находится вокруг нас (после получения состояния .PoweredOn — вызываем функцию scanForPeripheralsWithServices:)
-        manager?.scanForPeripherals(withServices: nil, options: nil)
-        
+        // manager?.scanForPeripherals(withServices: nil, options: nil)
         tableView.reloadData()
     }
-    
 }
-
 
 extension BluetoothVC: CBCentralManagerDelegate {
     
@@ -56,6 +51,17 @@ extension BluetoothVC: CBCentralManagerDelegate {
         case .poweredOn:
             central.scanForPeripherals(withServices: nil,
                                        options: nil)
+        case .poweredOff:
+//            central.stopScan()
+            presentAlertController("Please activate bluetooth")
+        case .resetting:
+            print("Connecting...")
+        case .unauthorized:
+            print("Autorize please")
+        case .unknown:
+            print("Unkonwn")
+        case .unsupported:
+            print("Unsupported")
         default:
             presentAlertController("Please activate bluetooth")
         }
@@ -72,12 +78,12 @@ extension BluetoothVC: CBCentralManagerDelegate {
         let uuid = peripheral.identifier.uuidString
         let rssi = RSSI.stringValue
         
+        print(BluetoothModel(name: name, rssi: rssi, uuid: uuid))
+        
         self.blePeripherals[uuid] = BluetoothModel(name: name,
                                                    rssi: rssi,
                                                    uuid: uuid)
         self.tableView.reloadData()
-        
-        
     }
 }
 
@@ -90,8 +96,8 @@ extension BluetoothVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifire) as? BluetoothTableViewCell else { return UITableViewCell() }
         
-        let bleDeviceUUID = blePeripheralsNamed[indexPath.row] // получили значения по индексу
-        let bleDevice = blePeripherals[bleDeviceUUID] // получили значения по названию бле устройства
+        let bleDeviceUUID = blePeripheralsNamed[indexPath.row] // получили названия устройств по индексу ячеек
+        let bleDevice = blePeripherals[bleDeviceUUID] // получили девайсы по ключу(названию)
         
         cell.uuidLabel.text = bleDeviceUUID
         cell.rssiLabel.text = bleDevice?.rssi
@@ -99,8 +105,4 @@ extension BluetoothVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
-    
-    
 }

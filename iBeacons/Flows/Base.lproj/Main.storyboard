@@ -79,7 +79,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fyc-8N-OlV" secondAttribute="trailing" id="uBh-pb-zpI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bluetooth" id="0dV-z6-QBM"/>
+                    <tabBarItem key="tabBarItem" title="Bluetooth" image="dot.radiowaves.left.and.right" catalog="system" id="0dV-z6-QBM"/>
                     <connections>
                         <outlet property="tableView" destination="Fyc-8N-OlV" id="gIo-Pm-bMN"/>
                     </connections>
@@ -139,7 +139,7 @@
                             <constraint firstItem="eyk-nF-jLC" firstAttribute="bottom" secondItem="BuR-Gh-04B" secondAttribute="bottom" id="eI5-za-uVs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Beacons" id="pws-0R-5Gs"/>
+                    <tabBarItem key="tabBarItem" title="Beacons" image="antenna.radiowaves.left.and.right" catalog="system" id="pws-0R-5Gs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAZ-bo-9aQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,6 +147,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="antenna.radiowaves.left.and.right" catalog="system" width="128" height="109"/>
+        <image name="dot.radiowaves.left.and.right" catalog="system" width="128" height="89"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
