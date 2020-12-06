@@ -15,7 +15,7 @@ class BeaconsVC: UIViewController {
     private let locationManager = CLLocationManager()
     private var beaconConstraints = [CLBeaconIdentityConstraint: [CLBeacon]]()
     private var beacons = [CLProximity: [CLBeacon]]()
-    
+    private var beacon = [Beacon]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -112,11 +112,10 @@ extension BeaconsVC: CLLocationManagerDelegate {
             allBeacons.append(contentsOf: regionResult)
         }
         
-        for range in [CLProximity.unknown,
-                      .immediate,
-                      .near,
-                      .far] {
-            let proximityBeacons = allBeacons.filter { $0.proximity == range  }
+        for range in [CLProximity.unknown, .immediate, .near, .far] {
+            let proximityBeacons = allBeacons.filter {
+                $0.proximity == range
+            }
             if !proximityBeacons.isEmpty {
                 self.beacons[range] = proximityBeacons
                 print(self.beacons)

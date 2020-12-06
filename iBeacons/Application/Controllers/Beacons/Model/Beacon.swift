@@ -8,5 +8,8 @@
 import Foundation
 
 struct Beacon {
-    
+    var uuid: String
+    var major: String
+    var minor: String
+    var rssi: String
 }

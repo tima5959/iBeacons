@@ -126,6 +126,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1nN-ye-HMA" kind="showDetail" id="ibh-9o-HRP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -152,7 +155,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAZ-bo-9aQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685.5999999999999" y="235.23238380809596"/>
+            <point key="canvasLocation" x="1590" y="235"/>
+        </scene>
+        <!--Beacon DetailVC-->
+        <scene sceneID="HF3-RM-WS3">
+            <objects>
+                <viewController id="1nN-ye-HMA" customClass="BeaconDetailVC" customModule="iBeacons" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jkT-nP-06x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="avY-me-X4Z">
+                                <rect key="frame" x="8" y="8" width="359" height="631"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnz-mA-Ccb">
+                                        <rect key="frame" x="150" y="0.0" width="59" height="140"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDZ-2M-Y0B">
+                                        <rect key="frame" x="149" y="145" width="61" height="140.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfs-6v-h05">
+                                        <rect key="frame" x="148.5" y="290.5" width="62" height="140"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kea-Wy-rYs">
+                                        <rect key="frame" x="154" y="435.5" width="51.5" height="195.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0l8-zq-haN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="avY-me-X4Z" firstAttribute="top" secondItem="0l8-zq-haN" secondAttribute="top" constant="8" id="6cf-i5-ceH"/>
+                            <constraint firstItem="avY-me-X4Z" firstAttribute="leading" secondItem="0l8-zq-haN" secondAttribute="leading" constant="8" id="SEh-vh-6DD"/>
+                            <constraint firstItem="0l8-zq-haN" firstAttribute="bottom" secondItem="avY-me-X4Z" secondAttribute="bottom" constant="8" id="YEr-aS-Ogz"/>
+                            <constraint firstItem="0l8-zq-haN" firstAttribute="trailing" secondItem="avY-me-X4Z" secondAttribute="trailing" constant="8" id="bDE-xv-47a"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQf-iI-a7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397.5999999999999" y="234.33283358320841"/>
         </scene>
         <!--Beacons-->
         <scene sceneID="xf4-e9-7il">
