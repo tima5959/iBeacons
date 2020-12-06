@@ -10,7 +10,7 @@ import CoreBluetooth
 
 class BluetoothVC: UIViewController {
     
-    private let reuseIdentifire = "BluetoothTableViewCell"
+    private let reuseIdentifier = "BluetoothTableViewCell"
     
     private var manager: CBCentralManager?
     private var blePeripherals = [String: BluetoothModel]()
@@ -94,7 +94,7 @@ extension BluetoothVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifire) as? BluetoothTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? BluetoothTableViewCell else { return UITableViewCell() }
         
         let bleDeviceUUID = blePeripheralsNamed[indexPath.row] // получили названия устройств по индексу ячеек
         let bleDevice = blePeripherals[bleDeviceUUID] // получили девайсы по ключу(названию)

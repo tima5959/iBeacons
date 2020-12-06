@@ -18,6 +18,7 @@
 		225D4F4B25796C9000183A5F /* BeaconsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F4A25796C9000183A5F /* BeaconsTableViewCell.swift */; };
 		227AEE61257976B400C29579 /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227AEE60257976B400C29579 /* UIViewController + Ext.swift */; };
 		227AEE65257AAC4C00C29579 /* BluetoothModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227AEE64257AAC4C00C29579 /* BluetoothModel.swift */; };
+		22DEC294257CDFF50020A145 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEC293257CDFF50020A145 /* Beacon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		225D4F4A25796C9000183A5F /* BeaconsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsTableViewCell.swift; sourceTree = "<group>"; };
 		227AEE60257976B400C29579 /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
 		227AEE64257AAC4C00C29579 /* BluetoothModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothModel.swift; sourceTree = "<group>"; };
+		22DEC293257CDFF50020A145 /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2279ABD5257AACE300DBC9B6 /* Model */,
-				2279ABD4257AACD900DBC9B6 /* Controller */,
+				2279ABD4257AACD900DBC9B6 /* Controllers */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -139,19 +141,20 @@
 		225D4F4425796C4F00183A5F /* Beacons */ = {
 			isa = PBXGroup;
 			children = (
+				22DEC292257CDFEA0020A145 /* Model */,
 				225D4F36257967CC00183A5F /* BeaconsVC.swift */,
 				225D4F4A25796C9000183A5F /* BeaconsTableViewCell.swift */,
 			);
 			path = Beacons;
 			sourceTree = "<group>";
 		};
-		2279ABD4257AACD900DBC9B6 /* Controller */ = {
+		2279ABD4257AACD900DBC9B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				225D4F33257967BE00183A5F /* BluetoothVC.swift */,
 				225D4F4625796C8000183A5F /* BluetoothTableViewCell.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		2279ABD5257AACE300DBC9B6 /* Model */ = {
@@ -176,6 +179,14 @@
 				227AEE60257976B400C29579 /* UIViewController + Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		22DEC292257CDFEA0020A145 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22DEC293257CDFF50020A145 /* Beacon.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 				227AEE61257976B400C29579 /* UIViewController + Ext.swift in Sources */,
 				225D4F34257967BE00183A5F /* BluetoothVC.swift in Sources */,
 				225D4F37257967CC00183A5F /* BeaconsVC.swift in Sources */,
+				22DEC294257CDFF50020A145 /* Beacon.swift in Sources */,
 				225D4F202579674700183A5F /* SceneDelegate.swift in Sources */,
 				225D4F4B25796C9000183A5F /* BeaconsTableViewCell.swift in Sources */,
 				227AEE65257AAC4C00C29579 /* BluetoothModel.swift in Sources */,

@@ -100,23 +100,23 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="HEq-BX-bhq"/>
-                        <segue destination="5Ky-PQ-WM5" kind="relationship" relationship="viewControllers" id="n0H-FB-kyQ"/>
+                        <segue destination="aDJ-lI-a82" kind="relationship" relationship="viewControllers" id="n0H-FB-kyQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECR-AI-lrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="-23.4375"/>
         </scene>
-        <!--Beacons-->
+        <!--BeaconsVC-->
         <scene sceneID="zk5-0y-tNY">
             <objects>
-                <viewController id="5Ky-PQ-WM5" sceneMemberID="viewController">
+                <viewController id="5Ky-PQ-WM5" customClass="BeaconsVC" customModule="iBeacons" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ko4-HK-XqU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BuR-Gh-04B">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconsTableViewCell" rowHeight="80" id="EEm-f3-M7m" customClass="BeaconsTableViewCell" customModule="iBeacons" customModuleProvider="target">
@@ -139,11 +139,39 @@
                             <constraint firstItem="eyk-nF-jLC" firstAttribute="bottom" secondItem="BuR-Gh-04B" secondAttribute="bottom" id="eI5-za-uVs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Beacons" image="antenna.radiowaves.left.and.right" catalog="system" id="pws-0R-5Gs"/>
+                    <navigationItem key="navigationItem" id="b4L-Lo-dks">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WFp-fD-UT8">
+                            <connections>
+                                <action selector="addBeacon:" destination="5Ky-PQ-WM5" id="9hg-ha-C2S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="BuR-Gh-04B" id="gaW-hW-YCx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAZ-bo-9aQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.82608695652175" y="235.71428571428569"/>
+            <point key="canvasLocation" x="1685.5999999999999" y="235.23238380809596"/>
+        </scene>
+        <!--Beacons-->
+        <scene sceneID="xf4-e9-7il">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aDJ-lI-a82" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Beacons" image="antenna.radiowaves.left.and.right" catalog="system" id="pws-0R-5Gs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LNG-0O-KGw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Ky-PQ-WM5" kind="relationship" relationship="rootViewController" id="NrI-pI-Ed0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SvW-M0-43U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746.39999999999998" y="235.23238380809596"/>
         </scene>
     </scenes>
     <resources>
