@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221C3502257D6A1500C17857 /* Ble.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 221C3501257D6A1500C17857 /* Ble.jpeg */; };
 		225D4F1E2579674700183A5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F1D2579674700183A5F /* AppDelegate.swift */; };
 		225D4F202579674700183A5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D4F1F2579674700183A5F /* SceneDelegate.swift */; };
 		225D4F252579674700183A5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225D4F232579674700183A5F /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221C3501257D6A1500C17857 /* Ble.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ble.jpeg; sourceTree = "<group>"; };
 		225D4F1A2579674700183A5F /* iBeacons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeacons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225D4F1D2579674700183A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225D4F1F2579674700183A5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221C3500257D697200C17857 /* ImagesForGithub */ = {
+			isa = PBXGroup;
+			children = (
+				221C3501257D6A1500C17857 /* Ble.jpeg */,
+			);
+			path = ImagesForGithub;
+			sourceTree = "<group>";
+		};
 		225D4F112579674700183A5F = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 		225D4F3E2579699700183A5F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				221C3500257D697200C17857 /* ImagesForGithub */,
 				225D4F262579674800183A5F /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -284,6 +295,7 @@
 				225D4F2A2579674800183A5F /* LaunchScreen.storyboard in Resources */,
 				225D4F272579674800183A5F /* Assets.xcassets in Resources */,
 				225D4F252579674700183A5F /* Main.storyboard in Resources */,
+				221C3502257D6A1500C17857 /* Ble.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
