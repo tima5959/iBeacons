@@ -6,23 +6,25 @@
 //
 
 import UIKit
+import CoreLocation
 
 class BeaconDetailVC: UIViewController {
 
+    @IBOutlet weak var uuidLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
+    @IBOutlet weak var minorLabel: UILabel!
+    @IBOutlet weak var rssiLabel: UILabel!
+    @IBOutlet weak var accuracyLabel: UILabel!
+    
+    var beacon: CLBeacon?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        uuidLabel.text = beacon?.uuid.uuidString
+        majorLabel.text = beacon?.major.stringValue
+        minorLabel.text = beacon?.minor.stringValue
+        rssiLabel.text = String(beacon?.rssi ?? 0)
+        accuracyLabel.text = String(beacon?.accuracy ?? 0) + "" + "метров"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

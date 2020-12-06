@@ -11,11 +11,12 @@ import CoreLocation
 class BeaconsVC: UIViewController {
     
     private let reuseIdentifier = "BeaconsTableViewCell"
+    private let segueIdentifier = "BeaconDetailVCSegue"
+    
     let defaultUUID = "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"
     private let locationManager = CLLocationManager()
     private var beaconConstraints = [CLBeaconIdentityConstraint: [CLBeacon]]()
     private var beacons = [CLProximity: [CLBeacon]]()
-    private var beacon = [Beacon]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,6 +46,20 @@ class BeaconsVC: UIViewController {
     @IBAction func addBeacon(_ sender: Any) {
         findBeacon()
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let detailVC = segue.destination as! BeaconDetailVC
+                let keys = Array(beacons.keys)[indexPath.section]
+                let beacon = beacons[keys]?[indexPath.row]
+                
+                detailVC.beacon = beacon
+            }
+        }
+    }
+    
 }
 
 extension BeaconsVC: UITableViewDelegate, UITableViewDataSource {
@@ -77,9 +92,21 @@ extension BeaconsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! BeaconsTableViewCell
         
+        let key = Array(beacons.keys)[indexPath.section]
+        let value = beacons[key]
         
+        guard let beacon = value?[indexPath.row] else { return cell }
+        
+        cell.uuidLabel.text = beacon.uuid.uuidString
+        cell.majorLabel.text = beacon.major.stringValue
+        cell.minorLabel.text = beacon.minor.stringValue
+        cell.rssiLabel.text = String(beacon.rssi)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueIdentifier, sender: nil)
     }
 }
 
@@ -124,7 +151,6 @@ extension BeaconsVC: CLLocationManagerDelegate {
         tableView.reloadData()
     }
 }
-
 
 extension BeaconsVC {
     func findBeacon() {

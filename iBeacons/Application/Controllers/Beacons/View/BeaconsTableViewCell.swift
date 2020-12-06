@@ -8,16 +8,10 @@
 import UIKit
 
 class BeaconsTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
+    @IBOutlet weak var uuidLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
+    @IBOutlet weak var minorLabel: UILabel!
+    @IBOutlet weak var rssiLabel: UILabel!
+    
 }
